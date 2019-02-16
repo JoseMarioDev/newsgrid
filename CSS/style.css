@@ -1,0 +1,365 @@
+:root {
+  --color-primary: #C72727;
+  --color-secondary: #f99500;
+  --color-light: #f3f3f3;
+  --color-dark: #333;
+  --width-max: 1100px;
+}
+
+.category {
+  --color-sports: #f99500;
+  --color-ent: #a66bbe;
+  --color-tech: #009cff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'lato', sans-serif;
+  line-height: 1.5;
+  background: var(--color-light);
+}
+
+a {
+  color: var(--color-dark);
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+p {
+  margin: .5rem 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'staatliches', cursive;
+  margin-bottom: .55rem;
+  line-height: 1.3;
+}
+
+/* *****************
+utility
+******************** */
+
+.container {
+  max-width: var(--width-max);
+  margin: auto;
+  padding: 0 2rem;
+  overflow: hidden;
+}
+
+.category {
+  display: inline-block;
+  color: #fff;
+  font-size: .55rem;
+  text-transform: uppercase;
+  padding: .4rem .6rem;
+  border-radius: 15px;
+  margin-bottom: .5rem;
+}
+
+.category-sports {
+  background: var(--color-sports)
+}
+
+.category-ent {
+  background: var(--color-ent)
+}
+
+.category-tech {
+  background: var(--color-tech);
+  margin-top: .5rem;
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  background: var(--color-dark);
+  color: #fff;
+  padding: .5rem 1.5rem;
+}
+
+.btn-light {
+  background: var(--color-light)
+}
+
+.btn-primary {
+  background: var(--color-primary)
+}
+
+.btn-secondary {
+  background: var(--color-secondary)
+}
+
+.btn:hover {
+  opacity: .9;
+}
+
+.btn-block {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+.card {
+  background: #fff;
+  padding: 1rem;
+}
+
+.bg-dark {
+  background: var(--color-dark);
+  color: #fff;
+}
+
+.bg-primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.bg-secondary {
+  background: var(--color-secondary);
+  color: #fff;
+}
+
+.bg-dark h1,
+.bg-dark h2,
+.bg-dark h3,
+.bg-dark a,
+.bg-primary h1,
+.bg-primary h2,
+.bg-primary h3,
+.bg-primary a,
+.bg-secondary h1,
+.bg-secondary h2,
+.bg-secondary h3,
+.bg-secondary a {
+  color: #fff;
+}
+
+.py-1 {
+  padding: 1.5rem 0;
+}
+
+.py-2 {
+  padding: 2rem 0;
+}
+
+.py-3 {
+  padding: 3rem 0;
+}
+
+.p1 {
+  padding: 1.5rem
+}
+
+.p2 {
+  padding: 2rem
+}
+
+.p3 {
+  padding: 3rem
+}
+
+.l-heading {
+  font-size: 3rem;
+}
+
+.list li {
+  padding: .5rem 0;
+  border-bottom: #555 dotted 1px;
+  width: 90%;
+}
+
+.list li a:hover {
+  color: var(--color-primary) !important;
+}
+
+.container-page {
+  display: grid;
+  grid-template-columns: 5fr 2fr;
+  margin: 2rem 0;
+  grid-gap: 1.5rem;
+}
+
+.container-page>*:first-child {
+  grid-row: 1/span 3;
+}
+
+/* *****************
+navigation
+***************** */
+
+#main-nav {
+  background: #fff;
+  position: sticky;
+  top: 0;
+  /* have to include top value for sticky nav. needs to know where to stick */
+  z-index: 2;
+}
+
+#main-nav .container {
+  display: grid;
+  grid-template-columns: 6fr 3fr 2fr;
+  padding: 1rem;
+  align-items: center;
+}
+
+#main-nav .logo {
+  width: 180px;
+}
+
+#main-nav ul {
+  justify-self: end;
+  display: flex;
+}
+
+#main-nav ul li a {
+  padding: .75rem;
+  font-weight: bold;
+}
+
+#main-nav ul li a.current {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+#main-nav ul li a:hover {
+  background: var(--color-light);
+  color: var(--color-dark);
+}
+
+#main-nav .social {
+  justify-self: center;
+}
+
+#main-nav .social i {
+  color: #777;
+  margin-right: .5rem;
+}
+
+/* ************************
+        showcase
+************************** */
+
+#showcase {
+  color: #fff;
+  background: #333;
+  position: relative;
+  /* positon relative because before psuedo will be absolute with image */
+  padding: 2rem;
+}
+
+#showcase:before {
+  content: '';
+  background: url('../img/featured.jpg') no-repeat center center/cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: .4;
+  width: 100%;
+  height: 100%;
+}
+
+#showcase .showcase-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+#showcase .showcase-container .showcase-content {
+  z-index: 1;
+}
+
+#showcase .showcase-container .showcase-content p {
+  margin-bottom: 1rem;
+}
+
+/* articles
+********************** */
+
+#home-articles .articles-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
+
+#home-articles .articles-container>*:first-child,
+#home-articles .articles-container>*:last-child {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  align-items: center;
+  grid-column: 1/ span 2;
+}
+
+#home-articles .articles-container>*:last-child {
+  grid-column: 2/ span 2;
+}
+
+#article .meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #eee;
+  padding: .5rem;
+}
+
+#article .meta .category {
+  margin-top: .4rem;
+}
+
+/* footer */
+
+#footer-main {
+  background: var(--color-dark);
+  color: #fff;
+}
+
+#footer-main img {
+  width: 150px;
+}
+
+#footer-main a {
+  color: #fff;
+}
+
+#footer-main .footer-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1.5rem;
+}
+
+#footer-main .footer-container>*:last-child {
+  background: #444;
+  grid-column: 1 / span 4;
+  padding: .5rem;
+  text-align: center;
+  font-size: .75rem;
+}
+
+#footer-main .footer-container input[type='email'] {
+  width: 90%;
+  padding: .5rem;
+  margin-bottom: .5rem;
+}
+
+#footer-main .footer-container input[type='submit'] {
+  width: 90%;
+}
